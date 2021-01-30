@@ -59,33 +59,26 @@ export class ProductsContainerComponent implements OnInit {
     minPrice?: number,
     maxPrice?: number
   ) {
-    let filtered: Product[] = [];
+    let filtered: Product[] = this.productsList;
 
     if (brand) {
-      const currentFilteredProducts = this.getCurrentFilteredProducts(filtered);
-      filtered = currentFilteredProducts.filter((product) => {
+      filtered = filtered.filter((product) => {
         return product.brand === brand;
       });
     }
 
     if (applicationTime) {
-      const currentFilteredProducts = this.getCurrentFilteredProducts(filtered);
-      filtered = currentFilteredProducts.filter((product) => {
+      filtered = filtered.filter((product) => {
         return product.brand === brand;
       });
     }
 
     if (minPrice && maxPrice) {
-      const currentFilteredProducts = this.getCurrentFilteredProducts(filtered);
-      filtered = currentFilteredProducts.filter((product) => {
+      filtered = filtered.filter((product) => {
         return product.brand === brand;
       });
     }
 
     this.productsFiltered = filtered;
-  }
-
-  getCurrentFilteredProducts(filtered: Product[]): Product[] {
-    return filtered.length === 0 ? this.productsList : filtered;
   }
 }
