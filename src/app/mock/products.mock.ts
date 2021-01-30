@@ -4,9 +4,14 @@ export interface Product {
   qty: number;
   measurementUnit: string;
   price: number;
-  careType: string;
+  careType: CareType;
   brand: string;
   applicationTime: string;
+}
+
+export enum CareType {
+  bodily = 'bodily',
+  facial = 'facial',
 }
 
 const products: Product[] = [
@@ -17,7 +22,7 @@ const products: Product[] = [
     qty: 25,
     measurementUnit: 'ml',
     price: 30000,
-    careType: 'bodily',
+    careType: CareType.bodily,
     brand: 'Pepito',
     applicationTime: 'day',
   },
@@ -28,7 +33,7 @@ const products: Product[] = [
     qty: 25,
     measurementUnit: 'ml',
     price: 30000,
-    careType: 'bodily',
+    careType: CareType.bodily,
     brand: 'Pepito',
     applicationTime: 'day',
   },
@@ -39,7 +44,7 @@ const products: Product[] = [
     qty: 25,
     measurementUnit: 'ml',
     price: 30000,
-    careType: 'bodily',
+    careType: CareType.bodily,
     brand: 'Pepito',
     applicationTime: 'day',
   },
@@ -50,7 +55,7 @@ const products: Product[] = [
     qty: 25,
     measurementUnit: 'ml',
     price: 30000,
-    careType: 'bodily',
+    careType: CareType.bodily,
     brand: 'Pepito',
     applicationTime: 'day',
   },
@@ -61,7 +66,7 @@ const products: Product[] = [
     qty: 25,
     measurementUnit: 'ml',
     price: 30000,
-    careType: 'bodily',
+    careType: CareType.bodily,
     brand: 'Pepito',
     applicationTime: 'day',
   },
@@ -72,7 +77,7 @@ const products: Product[] = [
     qty: 25,
     measurementUnit: 'ml',
     price: 30000,
-    careType: 'bodily',
+    careType: CareType.bodily,
     brand: 'Pepito',
     applicationTime: 'day',
   },
@@ -83,7 +88,7 @@ const products: Product[] = [
     qty: 25,
     measurementUnit: 'ml',
     price: 30000,
-    careType: 'bodily',
+    careType: CareType.bodily,
     brand: 'Pepito',
     applicationTime: 'day',
   },
@@ -94,7 +99,7 @@ const products: Product[] = [
     qty: 25,
     measurementUnit: 'ml',
     price: 30000,
-    careType: 'bodily',
+    careType: CareType.bodily,
     brand: 'Pepito',
     applicationTime: 'day',
   },
@@ -105,7 +110,7 @@ const products: Product[] = [
     qty: 25,
     measurementUnit: 'ml',
     price: 30000,
-    careType: 'bodily',
+    careType: CareType.bodily,
     brand: 'Pepito',
     applicationTime: 'day',
   },
@@ -116,7 +121,7 @@ const products: Product[] = [
     qty: 25,
     measurementUnit: 'ml',
     price: 30000,
-    careType: 'bodily',
+    careType: CareType.bodily,
     brand: 'Pepito',
     applicationTime: 'day',
   },
@@ -127,7 +132,7 @@ const products: Product[] = [
     qty: 25,
     measurementUnit: 'ml',
     price: 30000,
-    careType: 'bodily',
+    careType: CareType.bodily,
     brand: 'Pepito',
     applicationTime: 'day',
   },
@@ -138,7 +143,7 @@ const products: Product[] = [
     qty: 25,
     measurementUnit: 'ml',
     price: 30000,
-    careType: 'bodily',
+    careType: CareType.bodily,
     brand: 'Pepito',
     applicationTime: 'day',
   },
