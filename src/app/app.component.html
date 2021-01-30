@@ -1,13 +1,13 @@
 <div class="container">
   <ul ngbNav #nav="ngbNav" class="nav-pills nav-fill">
     <li ngbNavItem>
-      <a ngbNavLink>Ver Cuidado Facial</a>
+      <a ngbNavLink class="fs-5 rounded-0">Ver Cuidado Facial</a>
       <ng-template ngbNavContent>
         <app-products-container [careType]="facial"></app-products-container>
       </ng-template>
     </li>
     <li ngbNavItem>
-      <a ngbNavLink>Ver Cuidado Corporal</a>
+      <a ngbNavLink class="fs-5 rounded-0">Ver Cuidado Corporal</a>
       <ng-template ngbNavContent>
         <app-products-container [careType]="bodily"></app-products-container>
       </ng-template>
