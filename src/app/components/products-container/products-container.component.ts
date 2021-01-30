@@ -1,5 +1,5 @@
 import { Component, Input, OnInit } from '@angular/core';
-import { CareType } from 'src/app/mock/products.mock';
+import products, { CareType, Product } from 'src/app/mock/products.mock';
 
 @Component({
   selector: 'app-products-container',
@@ -8,10 +8,17 @@ import { CareType } from 'src/app/mock/products.mock';
 })
 export class ProductsContainerComponent implements OnInit {
   @Input() careType: CareType = CareType.facial;
+  productsList?: Product[];
 
   constructor() {}
 
   ngOnInit(): void {
-    console.log(this.careType);
+    this.getProducts();
+  }
+
+  getProducts(): void {
+    this.productsList = products.filter(
+      (product) => product.careType === this.careType
+    );
   }
 }
