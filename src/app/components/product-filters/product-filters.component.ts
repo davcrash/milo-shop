@@ -1,4 +1,4 @@
-import { Component, Input, OnInit } from '@angular/core';
+import { Component, EventEmitter, Input, OnInit, Output } from '@angular/core';
 import { Product } from 'src/app/mock/products.mock';
 
 @Component({
@@ -12,7 +12,20 @@ export class ProductFiltersComponent implements OnInit {
   @Input() maxPrice = 0;
   @Input() minPrice = 0;
 
+  filters = {
+    brand: '',
+    applicationTime: '',
+    minPrice: 0,
+    maxPrice: 0,
+  };
+
+  @Output() filterEvent = new EventEmitter<any>();
+
   constructor() {}
 
   ngOnInit(): void {}
+
+  changeFilters() {
+    this.filterEvent.emit(this.filters);
+  }
 }
