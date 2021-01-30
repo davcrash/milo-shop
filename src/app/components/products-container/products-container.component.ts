@@ -16,6 +16,7 @@ export class ProductsContainerComponent implements OnInit {
   minPrice = 0;
 
   productsFiltered: Product[] = [];
+
   constructor() {}
 
   ngOnInit(): void {
@@ -50,5 +51,41 @@ export class ProductsContainerComponent implements OnInit {
     });
     this.maxPrice = Math.max(...prices);
     this.minPrice = Math.min(...prices);
+  }
+
+  filterProducts(
+    brand?: string,
+    applicationTime?: string,
+    minPrice?: number,
+    maxPrice?: number
+  ) {
+    let filtered: Product[] = [];
+
+    if (brand) {
+      const currentFilteredProducts = this.getCurrentFilteredProducts(filtered);
+      filtered = currentFilteredProducts.filter((product) => {
+        return product.brand === brand;
+      });
+    }
+
+    if (applicationTime) {
+      const currentFilteredProducts = this.getCurrentFilteredProducts(filtered);
+      filtered = currentFilteredProducts.filter((product) => {
+        return product.brand === brand;
+      });
+    }
+
+    if (minPrice && maxPrice) {
+      const currentFilteredProducts = this.getCurrentFilteredProducts(filtered);
+      filtered = currentFilteredProducts.filter((product) => {
+        return product.brand === brand;
+      });
+    }
+
+    this.productsFiltered = filtered;
+  }
+
+  getCurrentFilteredProducts(filtered: Product[]): Product[] {
+    return filtered.length === 0 ? this.productsList : filtered;
   }
 }
