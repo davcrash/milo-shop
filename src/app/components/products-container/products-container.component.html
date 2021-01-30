@@ -1,6 +1,10 @@
 <div class="container-fluid">
   <div class="row mt-5">
-    <div class="col-12 col-md-4 bg-primary">asd</div>
-    <div class="col-12 col-md-8 bg-danger">asd</div>
+    <div class="col-12 col-md-3 bg-primary">
+      <app-product-filters [products]="productsList"></app-product-filters>
+    </div>
+    <div class="col-12 col-md-9 bg-danger">
+      <app-products-grid></app-products-grid>
+    </div>
   </div>
 </div>

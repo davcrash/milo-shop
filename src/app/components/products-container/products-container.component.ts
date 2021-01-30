@@ -8,7 +8,7 @@ import products, { CareType, Product } from 'src/app/mock/products.mock';
 })
 export class ProductsContainerComponent implements OnInit {
   @Input() careType: CareType = CareType.facial;
-  productsList?: Product[];
+  productsList: Product[] = [];
 
   constructor() {}
 
