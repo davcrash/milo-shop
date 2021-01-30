@@ -1,5 +1,5 @@
 import { Component, EventEmitter, Input, OnInit, Output } from '@angular/core';
-import { Product } from 'src/app/mock/products.mock';
+import { LabelType, Options } from '@angular-slider/ngx-slider';
 
 @Component({
   selector: 'app-product-filters',
@@ -19,11 +19,29 @@ export class ProductFiltersComponent implements OnInit {
     maxPrice: 0,
   };
 
+  options: Options = {
+    floor: 0,
+    ceil: 0,
+  };
+
   @Output() filterEvent = new EventEmitter<any>();
 
   constructor() {}
 
-  ngOnInit(): void {}
+  ngOnInit(): void {
+    this.filters = {
+      ...this.filters,
+      minPrice: this.minPrice,
+      maxPrice: this.maxPrice,
+    };
+    this.options = {
+      floor: this.minPrice,
+      ceil: this.maxPrice,
+      translate: (): string => {
+        return '';
+      },
+    };
+  }
 
   changeFilters() {
     this.filterEvent.emit(this.filters);

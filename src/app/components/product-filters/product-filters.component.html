@@ -1,12 +1,42 @@
-<div>
-  {{ brands | json }}
-</div>
-<div>
-  {{ applicationTimes | json }}
-</div>
-<div>
-  {{ maxPrice }}
-</div>
-<div>
-  {{ minPrice }}
+<div class="pt-5 text-white">
+  <h5>Categorías</h5>
+  <div *ngIf="brands" class="mt-4 mb-3">
+    <b> Marca </b>
+  </div>
+  <div *ngFor="let brand of brands; let i = index">
+    <input
+      class="mb-1"
+      type="radio"
+      id="radio{{ i }}"
+      name="radiobrands"
+      [value]="brand"
+      [(ngModel)]="filters.brand"
+    />
+    {{ brand }}
+  </div>
+  <div *ngIf="applicationTimes" class="mt-4 mb-3">
+    <b> Momento de aplicación </b>
+  </div>
+  <div *ngFor="let time of applicationTimes; let i = index">
+    <input
+      class="mb-1"
+      type="radio"
+      id="radio{{ i }}"
+      name="radiotime"
+      [value]="time"
+      [(ngModel)]="filters.applicationTime"
+    />
+    {{ time }}
+  </div>
+  <div class="mt-4 mb-3">
+    <b> Precio </b>
+  </div>
+  <div>
+    {{ filters.minPrice | currency }} - {{ filters.maxPrice | currency }}
+    <ngx-slider
+      [(value)]="filters.minPrice"
+      [(highValue)]="filters.maxPrice"
+      [options]="options"
+    ></ngx-slider>
+  </div>
 </div>

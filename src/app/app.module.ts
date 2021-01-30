@@ -7,6 +7,8 @@ import { ProductsContainerComponent } from './components/products-container/prod
 import { ProductFiltersComponent } from './components/product-filters/product-filters.component';
 import { ProductCardComponent } from './components/product-card/product-card.component';
 import { ProductsGridComponent } from './components/products-grid/products-grid.component';
+import { FormsModule } from '@angular/forms';
+import { NgxSliderModule } from '@angular-slider/ngx-slider';
 
 @NgModule({
   declarations: [
@@ -14,13 +16,10 @@ import { ProductsGridComponent } from './components/products-grid/products-grid.
     ProductsContainerComponent,
     ProductFiltersComponent,
     ProductCardComponent,
-    ProductsGridComponent
+    ProductsGridComponent,
   ],
-  imports: [
-    BrowserModule,
-    NgbModule
-  ],
+  imports: [BrowserModule, NgbModule, FormsModule, NgxSliderModule],
   providers: [],
-  bootstrap: [AppComponent]
+  bootstrap: [AppComponent],
 })
-export class AppModule { }
+export class AppModule {}
