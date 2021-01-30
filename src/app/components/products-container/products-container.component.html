@@ -1,10 +1,15 @@
 <div class="container-fluid">
   <div class="row mt-5">
     <div class="col-12 col-md-3 bg-primary">
-      <app-product-filters [products]="productsList"></app-product-filters>
+      <app-product-filters
+        [brands]="brands"
+        [applicationTimes]="applicationTimes"
+        [maxPrice]="maxPrice"
+        [minPrice]="minPrice"
+      ></app-product-filters>
     </div>
     <div class="col-12 col-md-9 bg-danger">
-      <app-products-grid [products]="productsList"></app-products-grid>
+      <app-products-grid [products]="productsFiltered"></app-products-grid>
     </div>
   </div>
 </div>
