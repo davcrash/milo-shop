@@ -53,12 +53,10 @@ export class ProductsContainerComponent implements OnInit {
     this.minPrice = Math.min(...prices);
   }
 
-  filterProducts(
-    brand?: string,
-    applicationTime?: string,
-    minPrice?: number,
-    maxPrice?: number
-  ) {
+  // tslint:disable-next-line: typedef
+  filterProducts(event: any) {
+    const { brand, applicationTime, minPrice, maxPrice } = event;
+
     let filtered: Product[] = this.productsList;
 
     if (brand) {
@@ -69,13 +67,13 @@ export class ProductsContainerComponent implements OnInit {
 
     if (applicationTime) {
       filtered = filtered.filter((product) => {
-        return product.brand === brand;
+        return product.applicationTime === applicationTime;
       });
     }
 
     if (minPrice && maxPrice) {
       filtered = filtered.filter((product) => {
-        return product.brand === brand;
+        return product.price >= minPrice && product.price <= maxPrice;
       });
     }
 

@@ -13,8 +13,8 @@ export class ProductFiltersComponent implements OnInit {
   @Input() minPrice = 0;
 
   filters = {
-    brand: '',
-    applicationTime: '',
+    brand: null,
+    applicationTime: null,
     minPrice: 0,
     maxPrice: 0,
   };
@@ -43,6 +43,7 @@ export class ProductFiltersComponent implements OnInit {
     };
   }
 
+  // tslint:disable-next-line: typedef
   changeFilters() {
     this.filterEvent.emit(this.filters);
   }

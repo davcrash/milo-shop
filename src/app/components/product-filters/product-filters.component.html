@@ -11,6 +11,7 @@
       name="radiobrands"
       [value]="brand"
       [(ngModel)]="filters.brand"
+      (change)="changeFilters()"
     />
     {{ brand }}
   </div>
@@ -25,6 +26,7 @@
       name="radiotime"
       [value]="time"
       [(ngModel)]="filters.applicationTime"
+      (change)="changeFilters()"
     />
     {{ time }}
   </div>
@@ -37,6 +39,7 @@
       [(value)]="filters.minPrice"
       [(highValue)]="filters.maxPrice"
       [options]="options"
+      (valueChange)="changeFilters()"
     ></ngx-slider>
   </div>
 </div>
